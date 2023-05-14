@@ -1,4 +1,4 @@
-# Frontend project eeeeee
+# Frontend project
 
 ## Expectation
 
