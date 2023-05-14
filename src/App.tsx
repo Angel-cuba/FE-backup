@@ -1,16 +1,19 @@
-import { useState } from 'react'
-
-import './App.css'
+import React from 'react'
+import Navbar from './components/Navbar/Navbar'
+import Navigation from './router/Navigation'
+import { GlobalTheme } from './context/ThemeProvider'
+import { darkTheme, lightTheme } from './styles/styles'
 
 function App() {
-  const [count, setCount] = useState(0)
-
+  const { theme } = GlobalTheme()
   return (
-    <div className="App">
-      <h1>Vite + React + Update</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>count is {count}</button>
-      </div>
+    <div
+      style={{
+        backgroundColor: theme === 'light' ? lightTheme.bg : darkTheme.bg,
+        minHeight: '100vh'
+      }}>
+      <Navbar />
+      <Navigation />
     </div>
   )
 }
